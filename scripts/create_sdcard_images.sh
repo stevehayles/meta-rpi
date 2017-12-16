@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DSTDIR=~/rpi/upload
-IMG=qt5
+IMG=console
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
@@ -32,7 +32,8 @@ if [ -z "${MACHINE}" ]; then
 	exit 1
 fi
 
-if [ "${MACHINE}" = "raspberrypi2" ]; then
+if [ "${MACHINE}" = "raspberrypi2" ] ||
+   [ "${MACHINE}" = "raspberrypi3" ]; then	
 	MACH="rpi3"
 elif [ "${MACHINE}" = "raspberrypi" ]; then
 	MACH="rpi"
@@ -112,7 +113,7 @@ echo -e "\n***** Detatching loop device *****"
 sudo losetup -D
 
 echo -e "\n***** Compressing the SD card image *****"
-sudo xz -9 ${DSTDIR}/${SDIMG}
+sudo xz -k -9 ${DSTDIR}/${SDIMG}
 
 echo -e "\n***** Creating an md5sum *****"
 cd ${DSTDIR}
