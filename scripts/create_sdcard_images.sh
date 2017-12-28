@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DSTDIR=~/rpi/upload
-IMG=console
+IMG=quadra
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
