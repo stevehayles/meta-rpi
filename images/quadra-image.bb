@@ -25,6 +25,8 @@ MQTT = " \
 "
 
 QUADRA = " \
+    coreclr \
+    corefx \
     corehost \
 "
 
