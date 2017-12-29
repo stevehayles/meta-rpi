@@ -1,3 +1,7 @@
 *.swp
 *~
 scripts/config.txt
+
+\.vs/meta-rpi/v15/
+
+\.vs/
