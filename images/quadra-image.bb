@@ -24,12 +24,6 @@ MQTT = " \
     python-paho-mqtt \
 "
 
-QUADRA = " \
-    coreclr \
-    corefx \
-    corehost \
-"
-
 WIFI_SUPPORT = " \
     crda \
     iw \
@@ -103,7 +97,6 @@ RPI_STUFF = " \
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${MQTT} \
-    ${QUADRA} \
     ${DEV_SDK_INSTALL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
