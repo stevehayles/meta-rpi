@@ -4,7 +4,6 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 
 DEPENDS += "\
-	curl \
 	zlib \
 	util-linux \
 	icu \
@@ -17,7 +16,7 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	libcurl \
+	curl \
 "
 
 PR = "r0"
