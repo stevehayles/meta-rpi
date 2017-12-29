@@ -33,7 +33,6 @@ SDK = "2.0.4"
 
 PACKAGES = "\
 	${PN} \
-	${PN}-dev \
 "
 
 do_configure[noexec] = "1"
@@ -48,14 +47,12 @@ shell_do_install() {
 	install -d ${D}${bindir}
 	install -d ${D}${datadir}/dotnet
 	install -d ${D}${datadir}/dotnet/host/fxr
-	install -d ${D}${datadir}/dotnet/sdk
 	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App
 
 	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet
 	install -m 0644 ${S}/LICENSE.txt ${D}${datadir}/dotnet
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${datadir}/dotnet
 
-	cp -r ${S}/sdk/${SDK} ${D}${datadir}/dotnet/sdk
 	cp -r ${S}/host/fxr/${HOST_FXR} ${D}${datadir}/dotnet/host/fxr
 	cp -r ${S}/shared/Microsoft.NETCore.App/${SHARED_FRAMEWORK} ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App
 
@@ -71,14 +68,8 @@ FILES_${PN} = "\
 	${datadir}/dotnet/shared \
 "
 
-FILES_${PN}-dev = "\
-	${datadir}/dotnet/sdk \
-"
-
-RRECOMMENDS_dotnet-dev[nodeprrecs] = "1"
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
-INSANE_SKIP_${PN}-dev = "libdir"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 BBCLASSEXTEND = "native"
