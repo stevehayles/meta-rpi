@@ -22,8 +22,8 @@ RDEPENDS_${PN}_class-target += "\
 PR = "r0"
 
 SRC_URI =  "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/release/2.0.0/dotnet-runtime-latest-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
-SRC_URI[md5sum] = "70ED44A618D8237C3EFE9BA81B16468B"
-SRC_URI[sha256sum] = "50E8955644EBBECCE51EA2CD6F28A5DB3B2B93B2F7201BEFAE30DA2FA17AC299"
+SRC_URI[md5sum] = "70ed44a618d8237c3efe9ba81b16468b"     
+SRC_URI[sha256sum] = "50e8955644ebbecce51ea2cd6f28a5db3b2b93b2f7201befae30da2fa17ac299"
 
 S = "${WORKDIR}"
 
