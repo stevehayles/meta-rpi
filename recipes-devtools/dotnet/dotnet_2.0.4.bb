@@ -17,7 +17,9 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	openssl \
+	libcurl \
+	libuv \
+	libssl \
 "
 
 PR = "r0"
