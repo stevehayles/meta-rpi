@@ -17,10 +17,12 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	libcurl-devel \
+	libcurl \
 	libuv \
 	libssl \
 "
+
+PREFERRED_VERSION_curl = "7.16.0"
 
 PR = "r0"
 
