@@ -6,9 +6,10 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 DEPENDS += "\
 	curl \
 	zlib \
+#	util-linux \
 	icu \
-	openssl \
 	libunwind \
+	openssl
 "
 
 RDEPENDS_${PN}_class-target += "\
@@ -16,7 +17,7 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	libcurl \
+	libcurl
 "
 
 PR = "r0"
