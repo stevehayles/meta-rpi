@@ -1,3 +1,3 @@
-DEPENDS += "openssl"
+EXTRA_OECONF = "--with-ssl "
 
-EXTRA_OECONF += "--with-ssl "
+DEPENDS += "openssl"
