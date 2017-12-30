@@ -1,0 +1,9 @@
+
+[share]
+    comment = Quadra File Server
+    path = /home/quadra/share
+    browsable = yes
+    guest ok = yes
+    read only = no
+    create mask = 0755
+    force user = quadra
