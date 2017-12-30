@@ -9,7 +9,7 @@ DEPENDS += "\
 #	util-linux \
 	icu \
 	libunwind \
-	openssl
+	openssl \
 "
 
 RDEPENDS_${PN}_class-target += "\
@@ -17,7 +17,6 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	libcurl
 "
 
 PR = "r0"
