@@ -22,8 +22,6 @@ RDEPENDS_${PN}_class-target += "\
 	libssl \
 "
 
-PREFERRED_VERSION_curl = "7.16.0"
-
 PR = "r0"
 
 SRC_URI =  "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/release/2.0.0/dotnet-runtime-latest-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
