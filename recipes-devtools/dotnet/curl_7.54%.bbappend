@@ -1,1 +1,1 @@
-EXTRA_OECONF += "--with-openssl "
+EXTRA_OECONF += "--with-ssl "
