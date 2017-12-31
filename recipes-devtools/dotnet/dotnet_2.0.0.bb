@@ -20,10 +20,6 @@ RDEPENDS_${PN}_class-target += "\
     libcurl \
 "
 
-RDEPENDS_${PN} += "\
-    libcurl \
-"
-
 # coreclr
 # DEPENDS = "clang-native lldb libunwind gettext icu openssl util-linux cmake-native lttng-ust ca-certificates-native"
 # RDEPENDS_${PN} = "libicuuc libicui18n lttng-ust"
@@ -95,7 +91,7 @@ FILES_${PN} = "\
 	/opt/dotnet/shared \
 "
 
-INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
+INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir dotnet"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 BBCLASSEXTEND = "native"
