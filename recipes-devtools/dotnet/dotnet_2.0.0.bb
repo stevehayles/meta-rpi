@@ -63,29 +63,31 @@ python do_install () {
     oe.path.make_relative_symlink(d.expand("${D}${bindir}/dotnet"))
 }
 
+
+
 shell_do_install() {
 	install -d ${D}${bindir}
-	install -d ${D}${datadir}/dotnet
-	install -d ${D}${datadir}/dotnet/host/fxr
-	install -d ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App
+	install -d ${D}/opt/dotnet
+	install -d ${D}/opt/dotnet/host/fxr
+	install -d ${D}/opt/dotnet/shared/Microsoft.NETCore.App
 
-	install -m 0755 ${S}/dotnet ${D}${datadir}/dotnet
-	install -m 0644 ${S}/LICENSE.txt ${D}${datadir}/dotnet
-	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}${datadir}/dotnet
+	install -m 0755 ${S}/dotnet ${D}/opt/dotnet
+	install -m 0644 ${S}/LICENSE.txt ${D}/opt/dotnet
+	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
 
-	cp -r ${S}/host/fxr/${HOST_FXR} ${D}${datadir}/dotnet/host/fxr
-	cp -r ${S}/shared/Microsoft.NETCore.App/${SHARED_FRAMEWORK} ${D}${datadir}/dotnet/shared/Microsoft.NETCore.App
+	cp -r ${S}/host/fxr/${HOST_FXR} ${D}/opt/dotnet/host/fxr
+	cp -r ${S}/shared/Microsoft.NETCore.App/${SHARED_FRAMEWORK} ${D}/opt/dotnet/shared/Microsoft.NETCore.App
 
 	# Symlinks
-	ln -s ${D}${datadir}/dotnet/dotnet ${D}${bindir}/dotnet
+	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
 }
 
 FILES_${PN} = "\
 	${bindir} \
-	${datadir}/dotnet/dotnet \
-	${datadir}/dotnet/*.txt \
-	${datadir}/dotnet/host \
-	${datadir}/dotnet/shared \
+	/opt/dotnet/dotnet \
+	/opt/dotnet/*.txt \
+	/opt/dotnet/host \
+	/opt/dotnet/shared \
 "
 
 # INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
