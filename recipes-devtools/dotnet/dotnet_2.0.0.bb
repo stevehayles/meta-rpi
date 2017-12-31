@@ -34,11 +34,16 @@ RDEPENDS_${PN} += "\
 PR = "r0"
 
 # latest https://dotnetcli.blob.core.windows.net/dotnet/Runtime/release/2.0.0/dotnet-runtime-latest-linux-arm.tar.gz
-# 2.0.0 https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.0.0/dotnet-runtime-2.0.0-linux-arm.tar.gz
+# md5sum 70ed44a618d8237c3efe9ba81b16468b
+# sha256 50e8955644ebbecce51ea2cd6f28a5db3b2b93b2f7201befae30da2fa17ac299
+
+# 2.0.0  https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.0.0/dotnet-runtime-2.0.0-linux-arm.tar.gz
+# md5sum ce013b11e6e87b8c3eaae3fb489194b0
+# sha256 ad09b4618cb0a5e13914027f11794fcbf5529bea33078397324c7eb78f9778e8
 
 SRC_URI =  "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.0.0/dotnet-runtime-2.0.0-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
-SRC_URI[md5sum] = "70ed44a618d8237c3efe9ba81b16468b"     
-SRC_URI[sha256sum] = "50e8955644ebbecce51ea2cd6f28a5db3b2b93b2f7201befae30da2fa17ac299"
+SRC_URI[md5sum] = "ce013b11e6e87b8c3eaae3fb489194b0"     
+SRC_URI[sha256sum] = "ad09b4618cb0a5e13914027f11794fcbf5529bea33078397324c7eb78f9778e8"
 
 S = "${WORKDIR}"
 
