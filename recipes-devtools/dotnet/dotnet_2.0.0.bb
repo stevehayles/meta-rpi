@@ -17,8 +17,8 @@ RDEPENDS_${PN} += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
-	libcurl \
-	libssl \
+	curl \
+	openssl \
 "
 
 # coreclr
