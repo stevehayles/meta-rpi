@@ -1,8 +1,5 @@
 # Remove gnutils and enable ssl
-PACKAGECONFIG[ssl] = "--with-ssl"
-PACKAGECONFIG[gnutls] = "--without-gnutls"
+PACKAGECONFIG_remove = "gnutls"
+PACKAGECONFIG_append = " ssl"
 
-EXTRA_OECONF = "--with-ssl \
-                --without-gnutls \
-                "
-
+RDEPENDS_append = " openssl"
