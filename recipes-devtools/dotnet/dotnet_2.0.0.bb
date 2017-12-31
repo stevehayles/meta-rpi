@@ -34,6 +34,8 @@ RDEPENDS_${PN}_class-target += "\
 # DEPENDS = "clang-native corefx coreclr cmake-native openssl ca-certificates-native"
 # RDEPENDS_${PN} = "libssl libicuuc libicui18n libcurl"
 
+PREFERRED_VERSION_curl = "7.16.0" 
+
 PR = "r0"
 
 # latest https://dotnetcli.blob.core.windows.net/dotnet/Runtime/release/2.0.0/dotnet-runtime-latest-linux-arm.tar.gz
