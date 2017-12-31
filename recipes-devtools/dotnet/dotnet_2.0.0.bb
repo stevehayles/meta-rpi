@@ -88,7 +88,7 @@ FILES_${PN} = "\
 	${datadir}/dotnet/shared \
 "
 
-INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
+# INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 
 BBCLASSEXTEND = "native"
