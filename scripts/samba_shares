@@ -1,9 +1,17 @@
+[global]
+   workgroup = WORKGROUP
+   server string = Quadra Server
+   security = user
+   map to guest = Bad User
+   log file = /var/log/samba/%m.log
+   max log size = 50
+   dns proxy = no 
 
 [share]
-    comment = Quadra File Server
-    path = /home/quadra/share
+    path = /home/root/share
     browsable = yes
     guest ok = yes
     read only = no
     create mask = 0755
-    force user = quadra
+    force user = root
+
