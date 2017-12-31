@@ -4,11 +4,11 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 
 DEPENDS += "\
+	openssl \
 	curl \
 	zlib \
 	util-linux \
 	icu \
-	openssl \
 	libunwind \
 "
 
@@ -17,9 +17,9 @@ RDEPENDS_${PN}_class-target += "\
 	krb5 \
 	libicuuc \
 	libicui18n \
+	libssl \
 	libcurl \
 	libuv \
-	libssl \
 "
 
 # coreclr
@@ -33,8 +33,6 @@ RDEPENDS_${PN}_class-target += "\
 # corehost
 # DEPENDS = "clang-native corefx coreclr cmake-native openssl ca-certificates-native"
 # RDEPENDS_${PN} = "libssl libicuuc libicui18n libcurl"
-
-PREFERRED_VERSION_curl = "7.16.0" 
 
 PR = "r0"
 
