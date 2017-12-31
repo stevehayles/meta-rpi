@@ -18,6 +18,7 @@ RDEPENDS_${PN} += "\
 	libicuuc \
 	libicui18n \
 	libcurl \
+	libssl \
 "
 
 # coreclr
