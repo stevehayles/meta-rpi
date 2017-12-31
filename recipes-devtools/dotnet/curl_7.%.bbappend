@@ -2,4 +2,4 @@
 PACKAGECONFIG_remove = "gnutls"
 PACKAGECONFIG_append = " ssl"
 
-DEPENDS_append = " openssl"
+RDEPENDS_${PN}_append = " openssl"
