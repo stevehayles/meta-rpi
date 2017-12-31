@@ -20,6 +20,10 @@ RDEPENDS_${PN}_class-target += "\
     libcurl \
 "
 
+RDEPENDS_${PN} += "\
+    libcurl \
+"
+
 # coreclr
 # DEPENDS = "clang-native lldb libunwind gettext icu openssl util-linux cmake-native lttng-ust ca-certificates-native"
 # RDEPENDS_${PN} = "libicuuc libicui18n lttng-ust"
