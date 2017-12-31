@@ -12,7 +12,7 @@ DEPENDS += "\
 	libunwind \
 "
 
-RDEPENDS_${PN} += "\
+RDEPENDS_${PN}_class-target += "\
 	lttng-ust \
 	krb5 \
 	libicuuc \
@@ -93,3 +93,5 @@ FILES_${PN} = "\
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+
+BBCLASSEXTEND = "native"
