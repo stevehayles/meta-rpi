@@ -1,1 +1,8 @@
-PACKAGECONFIG ??= "${@bb.utils.contains("DISTRO_FEATURES", "ipv6", "ipv6", "", d)} ssl zlib"
+# Remove gnutils and enable ssl
+PACKAGECONFIG[ssl] = "--with-ssl"
+PACKAGECONFIG[gnutls] = "--without-gnutls"
+
+EXTRA_OECONF = "--with-ssl \
+                --without-gnutls \
+                "
+
