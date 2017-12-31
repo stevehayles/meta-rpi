@@ -18,9 +18,9 @@
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 445 -j ACCEPT
 
 ## HTTP HTTPS KESTREL
--A INPUT –p tcp -m tcp -–dport 80 -j ACCEPT
--A INPUT –p tcp -m tcp -–dport 443 -j ACCEPT
--A INPUT –p tcp -m tcp -–dport 5000 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 5000 -j ACCEPT
 
 COMMIT
 # Completed on Sat Sep 23 08:12:29 2017
