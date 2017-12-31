@@ -112,8 +112,8 @@ fi
 echo -e "\n***** Detatching loop device *****"
 sudo losetup -D
 
-echo -e "\n***** Compressing the SD card image *****"
-sudo xz -k -9 ${DSTDIR}/${SDIMG}
+# echo -e "\n***** Compressing the SD card image *****"
+# sudo xz -k -9 ${DSTDIR}/${SDIMG}
 
 echo -e "\n***** Creating an md5sum *****"
 cd ${DSTDIR}
