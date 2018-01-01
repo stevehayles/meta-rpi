@@ -75,5 +75,5 @@ FILES_${PN} = "\
 	/opt/dotnet/shared \
 "
 
-INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
+INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
