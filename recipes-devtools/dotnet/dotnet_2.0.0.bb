@@ -46,21 +46,22 @@ do_compile[noexec] = "1"
 
 python do_install () {
     bb.build.exec_func("shell_do_install", d)
-    oe.path.make_relative_symlink(d.expand("${D}${bindir}/dotnet"))
+    oe.path.make_relative_symlink(d.expand("${D}/opt/dotnet"))
 }
 
 shell_do_install() {
 	install -d ${D}${bindir}
+
 	install -d ${D}/opt/dotnet
-	install -d ${D}/opt/dotnet/host/fxr
-	install -d ${D}/opt/dotnet/shared/Microsoft.NETCore.App
+	install -d ${D}/opt/dotnet/host
+	install -d ${D}/opt/dotnet/shared
 
 	install -m 0755 ${S}/dotnet ${D}/opt/dotnet
 	install -m 0644 ${S}/LICENSE.txt ${D}/opt/dotnet
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
 
-	cp -r ${S}/host/fxr/${HOST_FXR} ${D}/opt/dotnet/host/fxr
-	cp -r ${S}/shared/Microsoft.NETCore.App/${SHARED_FRAMEWORK} ${D}/opt/dotnet/shared/Microsoft.NETCore.App
+	cp -a ${S}/host/. ${D}/opt/dotnet/host/
+	cp -a ${S}/shared/. ${D}/opt/dotnet/shared/
 
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
