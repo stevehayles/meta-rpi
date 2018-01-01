@@ -6,8 +6,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 RDEPENDS_${PN} += "\
     lttng-ust \
     krb5 \
-    libicuuc \
-    libicui18n \
+    icu \
     openssl \
 	curl \
 	libunwind \
