@@ -3,21 +3,14 @@ HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 
-DEPENDS += "\
-    curl \
-    zlib \
-    util-linux \
-    icu \
-    openssl \
-    libunwind \
-"
-
 RDEPENDS_${PN} += "\
     lttng-ust \
     krb5 \
     libicuuc \
     libicui18n \
-    libcurl \
+    openssl
+	curl \
+	libunwind \
 "
 
 # coreclr
@@ -91,5 +84,5 @@ FILES_${PN} = "\
 	/opt/dotnet/shared \
 "
 
-INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
+INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
