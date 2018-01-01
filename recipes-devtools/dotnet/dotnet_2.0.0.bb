@@ -8,7 +8,7 @@ RDEPENDS_${PN} += "\
     krb5 \
     libicuuc \
     libicui18n \
-    openssl
+    openssl \
 	curl \
 	libunwind \
 "
