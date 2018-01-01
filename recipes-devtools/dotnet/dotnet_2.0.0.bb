@@ -12,7 +12,7 @@ DEPENDS += "\
     libunwind \
 "
 
-RDEPENDS_${PN}_class-target += "\
+RDEPENDS_${PN} += "\
     lttng-ust \
     krb5 \
     libicuuc \
@@ -93,5 +93,3 @@ FILES_${PN} = "\
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir dotnet"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
-
-BBCLASSEXTEND = "native"
