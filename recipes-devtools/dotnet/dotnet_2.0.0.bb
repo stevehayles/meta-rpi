@@ -46,7 +46,7 @@ do_compile[noexec] = "1"
 
 python do_install () {
     bb.build.exec_func("shell_do_install", d)
-    oe.path.make_relative_symlink(d.expand("${D}/opt/dotnet"))
+	oe.path.make_relative_symlink(d.expand("${D}${bindir}/dotnet"))
 }
 
 shell_do_install() {
