@@ -3,7 +3,7 @@ HOMEPAGE = "http://www.fiftyone-north.com"
 LICENSE = "MIT"
 
 IMAGE_FEATURES += "package-management splash"
-IMAGE_LINGUAS = "en-us"
+IMAGE_LINGUAS = "en-gb"
 
 inherit core-image
 
@@ -26,6 +26,7 @@ MQTT = " \
 
 QUADRA = " \
     dotnet \
+    wiringPi \
 "
 
 WIFI_SUPPORT = " \
