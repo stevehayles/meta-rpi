@@ -3,7 +3,7 @@ HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 
-RDEPENDS_${PN} += "lttng-ust krb5 icu openssl curl libunwind"
+RDEPENDS_${PN} += "krb5 icu openssl curl libunwind"
 
 # coreclr
 # DEPENDS = "clang-native lldb libunwind gettext icu openssl util-linux cmake-native lttng-ust ca-certificates-native"
