@@ -26,7 +26,7 @@ MQTT = " \
 
 QUADRA = " \
     dotnet \
-    wiringPi \
+    wiringpi \
 "
 
 WIFI_SUPPORT = " \
