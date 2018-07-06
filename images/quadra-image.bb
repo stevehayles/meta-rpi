@@ -60,7 +60,6 @@ DEV_SDK_INSTALL = " \
     make \
     pkgconfig \
     python3-modules \
-	lldb \
 "
 
 DEV_EXTRAS = " \
