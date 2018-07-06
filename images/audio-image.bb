@@ -4,16 +4,18 @@ LICENSE = "MIT"
 
 IMAGE_LINGUAS = "en-us"
 
-inherit core-image
+inherit image
 
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
     firewall \
     iptables \
+    kernel-modules \
     ntp \
     ntp-tickadj \
     openssh openssh-keygen openssh-sftp-server \
+    packagegroup-core-boot \
     procps \
     term-prompt \
     tzdata \
@@ -22,7 +24,7 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-bcm43430 \
+    linux-firmware \
     wireless-tools \
     wpa-supplicant \
 "
@@ -38,6 +40,7 @@ ALSA += " \
     libswresample \
     libswscale \
     alsa-conf \
+    alsa-state \
     alsa-utils \
     alsa-utils-scripts \
  "
