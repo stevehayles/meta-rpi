@@ -5,12 +5,14 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-us"
 
-inherit core-image
+inherit image
 
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
+    kernel-modules \
     openssh openssh-keygen openssh-sftp-server \
+    packagegroup-core-boot \
     term-prompt \
     tzdata \
 "
@@ -18,7 +20,7 @@ CORE_OS = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-bcm43430 \
+    linux-firmware \
     wireless-tools \
     wpa-supplicant \
 "
@@ -62,7 +64,6 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     fbset \
     findutils \
-    firewall \
     i2c-tools \
     iperf3 \
     iproute2 \
