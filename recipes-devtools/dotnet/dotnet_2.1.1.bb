@@ -34,7 +34,7 @@ shell_do_install() {
 
 	install -d ${D}/opt/dotnet
 	install -d ${D}/opt/dotnet/host
-  install -d ${D}/opt/dotnet/sdk
+  	install -d ${D}/opt/dotnet/sdk
 	install -d ${D}/opt/dotnet/shared
 
 	install -m 0755 ${S}/dotnet ${D}/opt/dotnet
@@ -42,7 +42,7 @@ shell_do_install() {
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
 
 	cp -a ${S}/host/. ${D}/opt/dotnet/host/
-  cp -a ${S}/sdk/. ${D}/opt/dotnet/sdk/
+  	cp -a ${S}/sdk/. ${D}/opt/dotnet/sdk/
 	cp -a ${S}/shared/. ${D}/opt/dotnet/shared/
 
 	# Symlinks
