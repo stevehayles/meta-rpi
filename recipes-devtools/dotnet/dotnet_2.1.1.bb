@@ -54,7 +54,7 @@ FILES_${PN} = "\
 	/opt/dotnet/dotnet \
 	/opt/dotnet/*.txt \
 	/opt/dotnet/host \
-  /opt/dotnet/sdk \
+  	/opt/dotnet/sdk \
 	/opt/dotnet/shared \
 "
 
