@@ -2,10 +2,11 @@ DESCRIPTION = ".NET Core Runtime, SDK & CLI tools"
 HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
-
-RDEPENDS_${PN} += "libunwind icu libcurl openssl"
-
 PR = "r0"
+PV = "2.1.1"
+
+DEPENDS = "zlib curl"
+RDEPENDS_${PN} += "libunwind icu curl libcurl openssl libgssapi-krb5 util-linux-libuuid lttng-ust"
 
 SRC_URI =  "https://download.microsoft.com/download/D/0/4/D04C5489-278D-4C11-9BD3-6128472A7626/dotnet-sdk-2.1.301-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
 SRC_URI[md5sum] = "af57c4da7976fdb4cbf8bd3b38051700"     
