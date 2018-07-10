@@ -44,9 +44,9 @@ shell_do_install() {
 	install -m 0644 ${S}/LICENSE.txt ${D}/opt/dotnet
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
 
-	cp -a ${S}/host/. ${D}/opt/dotnet/host/
-  	cp -a ${S}/sdk/. ${D}/opt/dotnet/sdk/
-	cp -a ${S}/shared/. ${D}/opt/dotnet/shared/
+	cp -dr ${S}/host/. ${D}/opt/dotnet/host/
+  	cp -dr ${S}/sdk/. ${D}/opt/dotnet/sdk/
+	cp -dr ${S}/shared/. ${D}/opt/dotnet/shared/
 
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
