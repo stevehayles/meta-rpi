@@ -44,10 +44,6 @@ do_install() {
 
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
-	
-	# On x86_64 .NET uses /lib64/ld-linux-x86-64.so.2. However Yocto defaults everything to /lib
-	mkdir -p /lib64 
-	ln -sf /lib/ld-linux-x86-64.so.2 /lib64/ld-linux-x86-64.so.2
 }
 
 FILES_${PN} = "\
