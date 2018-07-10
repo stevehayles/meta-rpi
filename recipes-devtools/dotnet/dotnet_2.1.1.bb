@@ -7,7 +7,7 @@ PR = "r0"
 
 RPROVIDES_${PN} = "dotnetcore"
 DEPENDS = "zlib curl"
-RDEPENDS_${PN} += "libunwind icu curl libcurl openssl libgssapi-krb5 util-linux-libuuid lttng-ust"
+RDEPENDS_${PN} += "libunwind icu libcurl openssl"
 
 PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
 
@@ -26,7 +26,12 @@ PACKAGES = "${PN}"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
-do_install() {
+python do_install () {
+    bb.build.exec_func("shell_do_install", d)
+    oe.path.make_relative_symlink(d.expand("${D}${bindir}/dotnet"))
+}
+
+shell_do_install() {
 	install -d ${D}${bindir}
 
 	install -d ${D}/opt/dotnet
