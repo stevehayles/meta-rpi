@@ -2,9 +2,10 @@ DESCRIPTION = ".NET Core Runtime, SDK & CLI tools"
 HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
-PR = "r0"
 PV = "2.1.1"
+PR = "r0"
 
+RPROVIDES_${PN} = "dotnetcore"
 DEPENDS = "zlib curl"
 RDEPENDS_${PN} += "libunwind icu curl libcurl openssl libgssapi-krb5 util-linux-libuuid lttng-ust"
 
@@ -14,52 +15,24 @@ SRC_URI =  "https://download.microsoft.com/download/D/0/4/D04C5489-278D-4C11-9BD
 SRC_URI[md5sum] = "af57c4da7976fdb4cbf8bd3b38051700"     
 SRC_URI[sha256sum] = "5ab8b55dc930f4678ecb91d2d9117adf93830c9ef4dd2753ca64d61e8e3dc6d9"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/dotnet-runtime-2.1.1-linux-arm"
 
 HOST_FXR = "2.1.1"
 SHARED_FRAMEWORK = "2.1.1"
 SDK = "2.1.1"
 
-PACKAGES = "\
-	${PN} \
-"
+PACKAGES = "${PN}-dbg ${PN}"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
-python do_install () {
-    bb.build.exec_func("shell_do_install", d)
-    oe.path.make_relative_symlink(d.expand("${D}${bindir}/dotnet"))
-}
-
-shell_do_install() {
-	install -d ${D}${bindir}
-
+do_install() {
 	install -d ${D}/opt/dotnet
-	install -d ${D}/opt/dotnet/host
-  	install -d ${D}/opt/dotnet/sdk
-	install -d ${D}/opt/dotnet/shared
-
-	install -m 0755 ${S}/dotnet ${D}/opt/dotnet
-	install -m 0644 ${S}/LICENSE.txt ${D}/opt/dotnet
-	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
-
-	cp -dr ${S}/host/. ${D}/opt/dotnet/host/
-  	cp -dr ${S}/sdk/. ${D}/opt/dotnet/sdk/
-	cp -dr ${S}/shared/. ${D}/opt/dotnet/shared/
-
-	# Symlinks
-	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
+    	cp -R --no-dereference --preserve=mode,links -v ${WORKDIR}/dotnet-runtime-2.1.1-linux-arm/* ${D}/opt/dotnet/
 }
 
-FILES_${PN} = "\
-	${bindir} \
-	/opt/dotnet/dotnet \
-	/opt/dotnet/*.txt \
-	/opt/dotnet/host \
-  	/opt/dotnet/sdk \
-	/opt/dotnet/shared \
-"
+FILES_${PN} = "/opt/dotnet"
+FILES_${PN}-dbg += "/opt/dotnet/.debug"
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
 INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
