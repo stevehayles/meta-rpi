@@ -102,12 +102,16 @@ fi
 echo -e "\n***** Detatching loop device *****"
 sudo losetup -D
 
-# echo -e "\n***** Compressing the SD card image *****"
-# sudo xz -k -9 ${DSTDIR}/${SDIMG}
+if [[ -z "${COMPRESS}" ]]; then
+  echo -e "\n***** COMPRESS environment variable not set *****"
+else
+  echo -e "\n***** Compressing the SD card image *****"
+  sudo xz -k -9 ${DSTDIR}/${SDIMG}
 
-#echo -e "\n***** Creating an md5sum *****"
-#cd ${DSTDIR}
-#md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
+  echo -e "\n***** Creating an md5sum *****"
+  cd ${DSTDIR}
+  md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
+fi
 
 cd ${OLDPWD}
 
