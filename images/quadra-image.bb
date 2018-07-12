@@ -27,6 +27,7 @@ MQTT = " \
 QUADRA = " \
     dotnet \
     wiringpi \
+    pi-bluetooth \
 "
 
 WIFI_SUPPORT = " \
@@ -35,6 +36,14 @@ WIFI_SUPPORT = " \
     linux-firmware-bcm43430 \
     wireless-tools \
     wpa-supplicant \
+"
+
+DEV_SDK_INSTALL_MINIMAL = " \
+    git \
+    make \
+    gcc \
+    g++ \
+    sqlite3 \
 "
 
 DEV_SDK_INSTALL = " \
@@ -60,6 +69,7 @@ DEV_SDK_INSTALL = " \
     make \
     pkgconfig \
     python3-modules \
+    sqlite3 \
 "
 
 DEV_EXTRAS = " \
@@ -103,7 +113,7 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${MQTT} \
     ${QUADRA} \
-    ${DEV_SDK_INSTALL} \
+    ${DEV_SDK_INSTALL_MINIMAL} \
     ${DEV_EXTRAS} \
     ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
