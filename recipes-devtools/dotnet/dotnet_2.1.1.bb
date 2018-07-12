@@ -10,6 +10,8 @@ DEPENDS = "zlib curl"
 RDEPENDS_${PN} += "libunwind icu libcurl openssl"
 
 PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
+ 
+PNBLACKLIST[lttng-ust] = "soft dependency for DotNetCore and currently breaks the runtime" 
 
 SRC_URI =  "https://download.microsoft.com/download/D/0/4/D04C5489-278D-4C11-9BD3-6128472A7626/dotnet-sdk-2.1.301-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
 SRC_URI[md5sum] = "af57c4da7976fdb4cbf8bd3b38051700"     
