@@ -7,7 +7,7 @@ PR = "r0"
 
 RPROVIDES_${PN} = "dotnetcore"
 DEPENDS = "zlib curl"
-RDEPENDS_${PN} = "libunwind icu libcurl openssl"
+RDEPENDS_${PN} = "libunwind icu libcurl openssl libgssapi-krb5"
 
 PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
 
