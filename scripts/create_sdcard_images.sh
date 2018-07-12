@@ -22,9 +22,10 @@ else
 	fi
 fi
 
+# Set some defaults if not set in the environment for temporary directory
 if [ -z "${OETMP}" ]; then
-	echo "OETMP environment variable not set"
-	exit 1
+        TMP=/home/${SUDO_USER}/rpi/build/tmp
+        echo "OETMP environment not set, defaulting to ${OETMP:=$TMP}"
 fi
 
 if [ -z "${MACHINE}" ]; then
