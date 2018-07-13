@@ -16,6 +16,8 @@ else
 		CARDSIZE=2
 	elif [ "${1}" -eq 4 ]; then
 		CARDSIZE=4
+	elif [ "${1}" -eq 8 ]; then
+		CARDSIZE=8
 	else
 		echo "Unsupported card size: ${1}"
 		exit 1
