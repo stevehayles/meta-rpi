@@ -9,7 +9,7 @@ export MACHINE=raspberrypi3
 echo -e "\n***** Enabling Image Compression *****"
 export COMPRESS=1
 
-sudo -E ./create_sdcard_images.sh 4
+sudo -E ./create_sdcard_images.sh
 
 echo -e "\n***** Uploading image to Dropbox *****"
 
