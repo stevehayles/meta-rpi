@@ -17,6 +17,6 @@ cd ~/rpi/upload/
 
 curl -X POST https://content.dropboxapi.com/2/files/upload \
     --header "Authorization: Bearer GNEuV5Q2I7QAAAAAAABBRYS5Iq5c3zYNNYtjTHrea1MPtV4LGG_vWfSpnudre2_a" \
-    --header "Dropbox-API-Arg: {\"path\": \"/51 North/Projects/Quadra/quadra-raspberrypi3-4gb_v1.img.xz\"}" \
+    --header "Dropbox-API-Arg: {\"path\": \"/51 North/Projects/Quadra/quadra-raspberrypi3-4gb_$(date +"%FT%H%M").img.xz\"}" \
     --header "Content-Type: application/octet-stream" \
     --data-binary @quadra-raspberrypi3-4gb.img.xz
