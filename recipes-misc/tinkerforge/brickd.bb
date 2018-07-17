@@ -3,7 +3,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://license.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 DEPENDS = "pkgconfig-native libusb1 udev pm-utils"
-RDEPENDS_${PN} = "libusb1 udev pm-utils"
+RDEPENDS_${PN} = "lsbinitscripts libusb1 udev pm-utils"
 
 SRC_URI = "git://github.com/Tinkerforge/brickd.git;rev=8f1fe4f373e60c01dd93ee00de4c7f7ab7a7e921 \
            git://github.com/Tinkerforge/daemonlib.git;rev=d1ffbed6bb7ab420cec9b173767fb6fd097fca80;destsuffix=git/src/daemonlib"
