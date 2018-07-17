@@ -42,6 +42,7 @@ do_install () {
     install -m 0755 ${S}/src/build_data/linux/installer/usr/lib/pm-utils/sleep.d/42brickd ${D}${SLEEP_HOOKS}  
     
     install -m 0755 ${S}/src/build_data/linux/installer/usr/share/brickd/brickd-sysv-init ${D}${sysconfdir}/init.d/brickd
+    install -m 0644 ${S}/src/build_data/linux/installer/etc/brickd-default.conf ${D}${sysconfdir}/brickd.conf
     install -m 0644 ${S}/src/build_data/linux/installer/etc/logrotate.d/brickd ${D}${sysconfdir}/logrotate.d
     
     install -m 0644 ${S}/src/build_data/linux/installer/usr/share/man/man5/brickd.conf.5 ${D}${datadir}/man/man5
