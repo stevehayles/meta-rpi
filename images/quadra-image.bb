@@ -35,7 +35,6 @@ WIFI_SUPPORT = " \
     crda \
     iw \
     linux-firmware-bcm43430 \
-    wireless-tools \
     wpa-supplicant \
 "
 
