@@ -1,29 +1,7 @@
 #!/bin/bash
 
-if [ -z "${DSTDIR}" ]; then
-    DSTDIR=~/rpi/upload
-fi
-
-if [ ! -d ${DSTDIR} ]; then
-    mkdir ${DSTDIR}
-
-    if [ $? -ne 0 ]; then
-        echo "Failed to create $DSTDIR"
-        exit 1
-    fi
-fi
-
-if [ -z "${IMG}" ]; then
-    IMG=qt5
-fi
-
-if [ -z "${MACHINE}" ]; then
-    if [ -f ../../build/conf/local.conf ]; then
-        export MACHINE=$(grep '^MACHINE =' ../../build/conf/local.conf | cut -d'=' -f2 | tr -d '"' | tr -d ' ')
-        echo "Using MACHINE from local.conf: $MACHINE"
-    fi
-fi
-
+DSTDIR=~/rpi/upload
+IMG=quadra
 IMG_LONG="${IMG}-image-${MACHINE}"
 
 if [ ! -d /media/card ]; then
@@ -34,14 +12,16 @@ fi
 if [ "x${1}" = "x" ]; then
     CARDSIZE=2
 else
-    if [ "${1}" -eq 2 ]; then
-        CARDSIZE=2
-    elif [ "${1}" -eq 4 ]; then
-        CARDSIZE=4
-    else
-        echo "Unsupported card size: ${1}"
-        exit 1
-    fi
+	if [ "${1}" -eq 2 ]; then
+		CARDSIZE=2
+	elif [ "${1}" -eq 4 ]; then
+		CARDSIZE=4
+	elif [ "${1}" -eq 8 ]; then
+		CARDSIZE=8
+	else
+		echo "Unsupported card size: ${1}"
+		exit 1
+	fi
 fi
 
 if [ -z "${OETMP}" ]; then
@@ -124,12 +104,17 @@ fi
 echo -e "\n***** Detatching loop device *****"
 sudo losetup -D
 
-echo -e "\n***** Compressing the SD card image *****"
-sudo xz -9 ${DSTDIR}/${SDIMG}
+if [[ -z "${COMPRESS}" ]]; then
+  echo -e "\n***** COMPRESS environment variable not set *****"
+else
+  echo -e "\n***** Compressing the SD card image *****"
+  sudo xz -k -9 ${DSTDIR}/${SDIMG}
 
-echo -e "\n***** Creating an md5sum *****"
-cd ${DSTDIR}
-md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
+  echo -e "\n***** Creating an md5sum *****"
+  cd ${DSTDIR}
+  md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
+fi
+
 cd ${OLDPWD}
 
 echo -e "\n***** Done *****\n"

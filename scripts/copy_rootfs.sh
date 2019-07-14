@@ -111,6 +111,20 @@ elif [ -f ./wpa_supplicant.conf ]; then
 	sudo cp ./wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 fi
 
+echo "Creating share directory"
+sudo mkdir -p /media/card/home/root/share
+sudo chmod -R 777 /media/card/home/root/share
+
+if [ -f ${SRCDIR}/samba_shares ]; then
+    echo "Writing samba_shares to /media/card/etc/samba/smb.conf"
+#	sudo cat ${SRCDIR}/samba_shares >> /media/card/etc/samba/smb.conf
+    sudo cp ${SRCDIR}/samba_shares /media/card/etc/samba/smb.conf
+elif [ -f ./samba_shares ]; then
+    echo "Writing ./samba_shares to /media/card/etc/samba/smb.conf"
+#	sudo cat ./samba_shares >> /media/card/etc/samba/smb.conf
+    sudo cp ./samba_shares /media/card/etc/samba/smb.conf
+fi
+
 echo "Unmounting ${DEV}"
 sudo umount ${DEV}
 

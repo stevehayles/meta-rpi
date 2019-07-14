@@ -3,3 +3,7 @@
 scripts/config.txt
 scripts/interfaces
 scripts/wpa_supplicant.conf
+
+\.vs/meta-rpi/v15/
+
+\.vs/
