@@ -115,6 +115,8 @@ else
   md5sum ${SDIMG}.xz > ${SDIMG}.xz.md5
 fi
 
+cd ${OLDPWD}
+
 if [[ -z "${DROPBOX}" ]]; then
   echo -e "\n***** DROPBOX environment variable not set *****\n"
 else
@@ -128,11 +130,9 @@ else
     REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
   fi
 
-  #echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}"
+  echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}\n"
 
   ./dropbox_uploader.sh -f .dropbox_uploader upload "${LOCAL}" "${REMOTE}"
 fi
-
-cd ${OLDPWD}
 
 echo -e "\n***** Done *****\n"
