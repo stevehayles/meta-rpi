@@ -50,8 +50,8 @@ shell_do_install() {
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
 
-    # Environment
-	export DOTNET_ROOT=/opt/dotnet
+    # Configure install directory
+	mkdir -p ${D}/etc/dotnet && printf '/opt/dotnet' > ${D}/etc/dotnet/install_location
 }
 
 FILES_${PN} = "\
@@ -61,6 +61,7 @@ FILES_${PN} = "\
 	/opt/dotnet/host \
   	/opt/dotnet/sdk \
 	/opt/dotnet/shared \
+	/etc/dotnet/install_location \
 "
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
