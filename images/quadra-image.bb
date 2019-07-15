@@ -2,7 +2,7 @@ SUMMARY = "A basic development image for the Quadra instrument processor"
 HOMEPAGE = "http://www.fiftyone-north.com"
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "package-management psplash"
+IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-gb"
 
 inherit image
