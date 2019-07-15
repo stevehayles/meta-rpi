@@ -5,12 +5,14 @@ LICENSE = "MIT"
 IMAGE_FEATURES += "package-management splash"
 IMAGE_LINGUAS = "en-gb"
 
-inherit core-image
+inherit image
 
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
+    kernel-modules \
     openssh openssh-keygen openssh-sftp-server samba \
+    packagegroup-core-boot \
     term-prompt \
     tzdata \
 "
