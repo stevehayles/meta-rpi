@@ -123,20 +123,16 @@ else
   cd ~/rpi/upload/
   
   if [[ -z "${COMPRESS}" ]]; then
-    FILE=@quadra-raspberrypi3-${CARDSIZE}gb.img
+    LOCAL=quadra-raspberrypi3-${CARDSIZE}gb.img
     REMOTE=quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img
   else
-    FILE=@quadra-raspberrypi3-${CARDSIZE}gb.img.xz
+    LOCAL=quadra-raspberrypi3-${CARDSIZE}gb.img.xz
     REMOTE=quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz
   fi
 
   echo -e "File name: ${FILE}\nRemote File name: ${REMOTE}"
 
-  curl -X POST https://content.dropboxapi.com/2/files/upload \
-      --header "Authorization: Bearer GNEuV5Q2I7QAAAAAAABBRYS5Iq5c3zYNNYtjTHrea1MPtV4LGG_vWfSpnudre2_a" \
-      --header "Dropbox-API-Arg: {\"path\": \"/51 North/Projects/Quadra/${REMOTE}\"}" \
-      --header "Content-Type: application/octet-stream" \
-      --data-binary ${FILE}
+  ./dropbox_uploader.sh -f .dropbox_uploader upload "${LOCAL}" "${REMOTE}"
 fi
 
 cd ${OLDPWD}
