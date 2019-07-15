@@ -49,6 +49,9 @@ shell_do_install() {
 
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
+
+    # Environment
+	export DOTNET_ROOT=/opt/dotnet
 }
 
 FILES_${PN} = "\
