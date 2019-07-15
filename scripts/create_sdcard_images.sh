@@ -128,7 +128,7 @@ else
     REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
   fi
 
-  echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}"
+  #echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}"
 
   ./dropbox_uploader.sh -f .dropbox_uploader upload "${LOCAL}" "${REMOTE}"
 fi
