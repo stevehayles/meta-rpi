@@ -119,18 +119,16 @@ if [[ -z "${DROPBOX}" ]]; then
   echo -e "\n***** DROPBOX environment variable not set *****"
 else
   echo -e "\n***** Uploading image to Dropbox *****"
-
-  cd ~/rpi/upload/
   
   if [[ -z "${COMPRESS}" ]]; then
-    LOCAL=quadra-raspberrypi3-${CARDSIZE}gb.img
-    REMOTE=quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img
+    LOCAL="${HOME}/rpi/upload/quadra-raspberrypi3-${CARDSIZE}gb.img"
+    REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img"
   else
-    LOCAL=quadra-raspberrypi3-${CARDSIZE}gb.img.xz
-    REMOTE=quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz
+    LOCAL="${HOME}/rpi/upload/quadra-raspberrypi3-${CARDSIZE}gb.img.xz"
+    REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
   fi
 
-  echo -e "File name: ${FILE}\nRemote File name: ${REMOTE}"
+  echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}"
 
   ./dropbox_uploader.sh -f .dropbox_uploader upload "${LOCAL}" "${REMOTE}"
 fi
