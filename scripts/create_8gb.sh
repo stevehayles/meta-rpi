@@ -6,8 +6,8 @@ export OETMP=~/rpi/build/tmp
 echo -e "\n***** Setting MACHINE raspberrypi3  *****"
 export MACHINE=raspberrypi3
 
-#echo -e "\n***** Enabling Image Compression *****"
-#export COMPRESS=1
+echo -e "\n***** Enabling Image Compression *****"
+export COMPRESS=1
 
 echo -e "\n***** Enabling Dropbox Upload *****"
 export DROPBOX=1

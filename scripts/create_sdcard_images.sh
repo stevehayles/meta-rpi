@@ -116,9 +116,9 @@ else
 fi
 
 if [[ -z "${DROPBOX}" ]]; then
-  echo -e "\n***** DROPBOX environment variable not set *****"
+  echo -e "\n***** DROPBOX environment variable not set *****\n"
 else
-  echo -e "\n***** Uploading image to Dropbox *****"
+  echo -e "\n***** Uploading image to Dropbox *****\n"
   
   if [[ -z "${COMPRESS}" ]]; then
     LOCAL="${HOME}/rpi/upload/quadra-raspberrypi3-${CARDSIZE}gb.img"
