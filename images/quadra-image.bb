@@ -33,6 +33,8 @@ QUADRA = " \
     brickd \
     wiringpi \
     pi-bluetooth \
+    nodejs \
+    docker-ce \
 "
 
 WIFI_SUPPORT = " \
