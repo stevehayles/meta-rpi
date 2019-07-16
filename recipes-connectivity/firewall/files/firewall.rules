@@ -22,6 +22,10 @@
 -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 5000 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 5001 -j ACCEPT
+
+## ICMP
+-A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 
 COMMIT
 # Completed on Mon Nov 26 16:30:48 2018
