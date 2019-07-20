@@ -15,7 +15,7 @@ PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
 URL = "https://download.visualstudio.microsoft.com/download/pr/8997987c-1fcc-4b83-ab49-08117ac40f86/13f3cc0b0dfcf37398d11caff3926bb9/dotnet-sdk-3.0.100-preview6-012264-linux-arm64.tar.gz"
 
 # run certUtil -hashfile dotnet-sdk-3.0.100-preview6-012264-linux-arm64.tar.gz MD5 (or SHA256) to get hashes
-SRC_URI =  "${URL};downloadfilename=dotnet-${PV}.tar.gz"
+SRC_URI =  "${URL};downloadfilename=dotnet-${PV}-linux-arm64.tar.gz"
 SRC_URI[md5sum] = "2b0395f45eb9f6f8e2d4c25361b4ef65"
 SRC_URI[sha256sum] = "16b691679fe5772cb822cd1b22e5bc7c1f3a149422b16c6d0845b7b0a87fdbfc"
 

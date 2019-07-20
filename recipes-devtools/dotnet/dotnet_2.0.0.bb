@@ -27,7 +27,7 @@ PR = "r0"
 # md5sum ce013b11e6e87b8c3eaae3fb489194b0
 # sha256 ad09b4618cb0a5e13914027f11794fcbf5529bea33078397324c7eb78f9778e8
 
-SRC_URI =  "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.0.0/dotnet-runtime-2.0.0-linux-arm.tar.gz;downloadfilename=dotnet-${PV}.tar.gz"
+SRC_URI =  "https://dotnetcli.blob.core.windows.net/dotnet/Runtime/2.0.0/dotnet-runtime-2.0.0-linux-arm.tar.gz;downloadfilename=dotnet-${PV}-linux-arm.tar.gz"
 SRC_URI[md5sum] = "ce013b11e6e87b8c3eaae3fb489194b0"     
 SRC_URI[sha256sum] = "ad09b4618cb0a5e13914027f11794fcbf5529bea33078397324c7eb78f9778e8"
 
