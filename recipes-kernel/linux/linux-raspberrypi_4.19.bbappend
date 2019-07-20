@@ -7,6 +7,11 @@ KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
 "
 
+KERNEL_DEVICETREE_raspberrypi3-64 = " \
+    ${RPI_KERNEL_DEVICETREE_64} \
+    ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
+"
+
 RPI_KERNEL_DEVICETREE = " \
     bcm2708-rpi-zero.dtb \
     bcm2708-rpi-zero-w.dtb \
@@ -18,6 +23,12 @@ RPI_KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
     bcm2711-rpi-4-b.dtb \
+"
+
+RPI_KERNEL_DEVICETREE_64 = " \
+    broadcom/bcm2710-rpi-3-b.dtb \
+    broadcom/bcm2710-rpi-3-b-plus.dtb \
+    broadcom/bcm2837-rpi-3-b.dtb \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
