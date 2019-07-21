@@ -3,8 +3,8 @@
 echo -e "\n***** Setting OETMP directory to ~/rpi/build/tmp  *****"
 export OETMP=~/rpi/build/tmp
 
-echo -e "\n***** Setting MACHINE raspberrypi3  *****"
-export MACHINE=raspberrypi3
+echo -e "\n***** Setting MACHINE raspberrypi3-64  *****"
+export MACHINE=raspberrypi3-64
 
 echo -e "\n***** Enabling Image Compression *****"
 export COMPRESS=1

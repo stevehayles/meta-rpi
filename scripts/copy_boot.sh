@@ -1,6 +1,7 @@
 #!/bin/bash
 
-KERNEL_IMAGETYPE=zImage
+#KERNEL_IMAGETYPE=zImage
+KERNEL_IMAGETYPE=Image
 
 if [ -z "${MACHINE}" ]; then
     echo "Environment variable MACHINE not set"
@@ -21,6 +22,12 @@ case "${MACHINE}" in
               bcm2710-rpi-3-b.dtb \
               bcm2710-rpi-3-b-plus.dtb \
               bcm2710-rpi-cm3.dtb"
+        ;;
+    raspberrypi3-64)
+        DTBS="bcm2710-rpi-3-b.dtb \
+              bcm2710-rpi-3-b-plus.dtb \
+              bcm2710-rpi-cm3.dtb \
+              bcm2837-rpi-3-b.dtb"
         ;;
     *)
         echo "Invalid MACHINE: ${MACHINE}"
@@ -156,8 +163,14 @@ for f in ${DTBS}; do
     fi
 done
 
-echo "Copying kernel"
-sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/${KERNEL_IMAGETYPE}
+
+if [[ ${MACHINE} == *"64"* ]]; then
+    echo "Copying 64 bit kernel as kernel8.img"
+    sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/kernel8.img
+else
+    echo "Copying 32 bit kernel as ${KERNEL_IMAGETYPE}"
+    sudo cp ${SRCDIR}/${KERNEL_IMAGETYPE} /media/card/${KERNEL_IMAGETYPE}
+fi
 
 if [ $? -ne 0 ]; then
     echo "Error copying kernel"

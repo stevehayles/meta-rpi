@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DSTDIR=~/rpi/upload
-IMG=quadra
-IMG_LONG="${IMG}-image-${MACHINE}"
+IMG=quadra-image-64
+IMG_LONG="${IMG}-${MACHINE}"
 
 if [ ! -d /media/card ]; then
         echo "Temporary mount point [/media/card] not found"
@@ -123,11 +123,11 @@ else
   echo -e "\n***** Uploading image to Dropbox *****\n"
   
   if [[ -z "${COMPRESS}" ]]; then
-    LOCAL="${HOME}/rpi/upload/quadra-raspberrypi3-${CARDSIZE}gb.img"
-    REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img"
+    LOCAL="${HOME}/rpi/upload/${IMG_LONG}-${CARDSIZE}gb.img"
+    REMOTE="/51 North/Projects/Quadra/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img"
   else
-    LOCAL="${HOME}/rpi/upload/quadra-raspberrypi3-${CARDSIZE}gb.img.xz"
-    REMOTE="/51 North/Projects/Quadra/quadra-raspberrypi3-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
+    LOCAL="${HOME}/rpi/upload/${IMG_LONG}-${CARDSIZE}gb.img.xz"
+    REMOTE="/51 North/Projects/Quadra/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
   fi
 
   echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}\n"

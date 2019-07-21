@@ -1,9 +1,15 @@
+inherit siteinfo
+
 SRCREV = "648ffc470824c43eb0d16c485f4c24816b32cd6f"
 
 do_deploy_append() {
-    if [ -z "${MENDER_ARTIFACT_NAME}" ]; then
-        if [ -n "${KERNEL_IMAGETYPE}" ]; then
-            sed -i '/#kernel=/ c\kernel=${KERNEL_IMAGETYPE}' ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+    # If we are building a 64 bit kernel on Rpi then the image name in the file is not optional
+    # and needs to be commented out (which is the standard from the incoming config.txt)
+    if [ "${SITEINFO_BITS}" != "64" ]; then
+        if [ -z "${MENDER_ARTIFACT_NAME}" ]; then
+            if [ -n "${KERNEL_IMAGETYPE}" ]; then
+                sed -i '/#kernel=/ c\kernel=${KERNEL_IMAGETYPE}' ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+            fi
         fi
     fi
 
