@@ -17,7 +17,7 @@ do_install () {
         bbfatal "RPI_WIFI_PWD is not defined !"
     fi
     install -d ${D}/${systemd_unitdir}/network
-    install -m 0644 ${WORKDIR}/26-dhcp-wireless.network ${D}/${systemd_unitdir}/network
+    install -m 0644 ${WORKDIR}/20-dhcp-wireless.network ${D}/${systemd_unitdir}/network
 
     install -d ${D}/${sysconfdir}/wpa_supplicant
     install -m 0600 ${WORKDIR}/wpa_supplicant-wlan0.conf ${D}/${sysconfdir}/wpa_supplicant
