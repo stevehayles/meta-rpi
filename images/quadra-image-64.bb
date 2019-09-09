@@ -134,7 +134,7 @@ disable_bootlogd() {
 }
 
 disable_unused_services() {
-    rm ${IMAGE_ROOTFS}/etc/rc5.d/S15mountnfs.sh
+    rm -f ${IMAGE_ROOTFS}/etc/rc5.d/S15mountnfs.sh
 }
 
 ROOTFS_POSTPROCESS_COMMAND += " \
