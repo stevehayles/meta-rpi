@@ -111,14 +111,6 @@ elif [ -f ./wpa_supplicant.conf ]; then
 	sudo cp ./wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
 fi
 
-if [ -f ${SRCDIR}/wpa_supplicant-wlan0.conf ]; then
-	echo "Writing wpa_supplicant-wlan0.conf to /media/card/etc/wpa_supplicant/"
-	sudo mkdir -p /media/card/etc/wpa_supplicant && cp ${SRCDIR}/wpa_supplicant-wlan0.conf $_
-elif [ -f ./wpa_supplicant-wlan0.conf ]; then
-	echo "Writing ./wpa_supplicant-wlan0.conf to /media/card/etc/wpa_supplicant/"
-	sudo mkdir -p /media/card/etc/wpa_supplicant && cp ./wpa_supplicant-wlan0.conf $_
-fi
-
 for i in *.network; do
     [ -f "$i" ] || break
     echo "Writing $i to /media/card/etc/systemd/network/$i"
