@@ -5,7 +5,7 @@
  [Service]
  Type=oneshot
 -ExecStart=@rootlibexecdir@/systemd-networkd-wait-online
-+ExecStart=@rootlibexecdir@/systemd-networkd-wait-online --interface=wlan0 --interface=eth0 --any
++ExecStart=@rootlibexecdir@/systemd-networkd-wait-online --interface=wlan0
  RemainAfterExit=yes
  
  [Install]
