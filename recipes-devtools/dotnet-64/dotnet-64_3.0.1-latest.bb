@@ -61,7 +61,7 @@ FILES_${PN} = "\
 	/usr/share/dotnet/host \
   	/usr/share/dotnet/sdk \
 	/usr/share/dotnet/shared \
-	/usr/share/dotnet/install_location \
+	/etc/dotnet/install_location \
 "
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
