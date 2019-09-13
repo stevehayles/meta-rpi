@@ -34,34 +34,34 @@ python do_install () {
 shell_do_install() {
 	install -d ${D}${bindir}
 
-	install -d ${D}/opt/dotnet
-	install -d ${D}/opt/dotnet/host
-  	install -d ${D}/opt/dotnet/sdk
-	install -d ${D}/opt/dotnet/shared
+	install -d ${D}/usr/share/dotnet
+	install -d ${D}/usr/share/dotnet/host
+  	install -d ${D}/usr/share/dotnet/sdk
+	install -d ${D}/usr/share/dotnet/shared
 
-	install -m 0755 ${S}/dotnet ${D}/opt/dotnet
-	install -m 0644 ${S}/LICENSE.txt ${D}/opt/dotnet
-	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/opt/dotnet
+	install -m 0755 ${S}/dotnet ${D}/usr/share/dotnet
+	install -m 0644 ${S}/LICENSE.txt ${D}/usr/share/dotnet
+	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/usr/share/dotnet
 
-	cp -R --no-dereference --preserve=mode,links -v ${S}/host/. ${D}/opt/dotnet/host/
-  	cp -R --no-dereference --preserve=mode,links -v ${S}/sdk/. ${D}/opt/dotnet/sdk/
-	cp -R --no-dereference --preserve=mode,links -v ${S}/shared/. ${D}/opt/dotnet/shared/
+	cp -R --no-dereference --preserve=mode,links -v ${S}/host/. ${D}/usr/share/dotnet/host/
+  	cp -R --no-dereference --preserve=mode,links -v ${S}/sdk/. ${D}/usr/share/dotnet/sdk/
+	cp -R --no-dereference --preserve=mode,links -v ${S}/shared/. ${D}/usr/share/dotnet/shared/
 
 	# Symlinks
-	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
+	ln -s ${D}/usr/share/dotnet/dotnet ${D}${bindir}/dotnet
 
     # Configure install directory
-	mkdir -p ${D}/etc/dotnet && printf '/opt/dotnet' > ${D}/etc/dotnet/install_location
+	mkdir -p ${D}/etc/dotnet && printf '/usr/share/dotnet' > ${D}/etc/dotnet/install_location
 }
 
 FILES_${PN} = "\
 	${bindir} \
-	/opt/dotnet/dotnet \
-	/opt/dotnet/*.txt \
-	/opt/dotnet/host \
-  	/opt/dotnet/sdk \
-	/opt/dotnet/shared \
-	/etc/dotnet/install_location \
+	/usr/share/dotnet/dotnet \
+	/usr/share/dotnet/*.txt \
+	/usr/share/dotnet/host \
+  	/usr/share/dotnet/sdk \
+	/usr/share/dotnet/shared \
+	/usr/share/dotnet/install_location \
 "
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
