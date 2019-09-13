@@ -1,0 +1,9 @@
+[Unit]
+Description=Watch /dev/bus/usb/001 and activate brickd.service
+
+[Path]
+PathExists=/dev/bus/usb/001
+Unit=brickd.service
+
+[Install]
+WantedBy=multi-user.target

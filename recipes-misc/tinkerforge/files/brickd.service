@@ -1,0 +1,11 @@
+[Unit]
+Description=Brickd USB interface to bricks and bricklets
+
+[Service]
+StartLimitIntervalSec=0
+RestartSec=1
+Restart=on-failure
+ExecStart=/usr/bin/brickd
+
+[Install]
+WantedBy=multi-user.target
