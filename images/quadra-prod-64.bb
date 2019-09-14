@@ -79,6 +79,10 @@ EXTRA_TOOLS_INSTALL = " \
     zip \
 "
 
+EXTRA_TOOLS_INSTALL_MINIMAL = " \
+    util-linux \
+"
+
 RPI_STUFF = " \
     raspi2fb \
     userland \
@@ -88,6 +92,7 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${QUADRA} \
     ${WIFI_SUPPORT} \
+    ${EXTRA_TOOLS_INSTALL_MINIMAL} \
     ${RPI_STUFF} \
 "
 
