@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
 PV = "2.2.6"
 PR = "r0"
 
-RPROVIDES_${PN} = "dotnetcore"
+RPROVIDES_${PN} = "dotnetcore-sdk"
 DEPENDS = "zlib curl"
 RDEPENDS_${PN} = "libunwind icu libcurl openssl libgssapi-krb5"
 

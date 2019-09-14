@@ -1,23 +1,23 @@
-DESCRIPTION = ".NET Core Runtime, SDK & CLI tools"
+DESCRIPTION = "64 bit .NET Core Runtime, SDK & CLI tools"
 HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=9fc642ff452b28d62ab19b7eea50dfb9"
-PV = "3.0-preview6"
+PV = "3.0-preview9"
 PR = "r0"
 
-RPROVIDES_${PN} = "dotnetcore"
+RPROVIDES_${PN} = "dotnetcore-64 dotnetcore-sdk-64"
 DEPENDS = "zlib curl"
 RDEPENDS_${PN} = "libunwind icu libcurl openssl libgssapi-krb5"
 
 PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
 
 # See https://github.com/dotnet/core/tree/master/release-notes for json formatted download details
-URL = "https://download.visualstudio.microsoft.com/download/pr/50bc5936-b374-490b-9312-f3ca23c0bcfa/d7680c7a396b115d95ac835334777d02/dotnet-sdk-3.0.100-preview6-012264-linux-arm.tar.gz"
-
-# run certUtil -hashfile dotnet-sdk-3.0.100-preview6-012264-linux-arm.tar.gz MD5 (or SHA256) to get hashes
-SRC_URI =  "${URL};downloadfilename=dotnet-${PV}-linux.arm.tar.gz"
-SRC_URI[md5sum] = "70c52cef93ae9295524dd3a868657e77"
-SRC_URI[sha256sum] = "e3223862302a302a082a94fbe64750551e1c39e0b073a63a16951c04cebe242f"
+URL = "https://download.visualstudio.microsoft.com/download/pr/c068c551-5f8c-4409-afd5-dac6a8aea3fe/b38a1104afbde07e5b9c89dbd2e0c894/dotnet-sdk-3.0.100-preview9-014004-linux-arm64.tar.gz"
+       
+# run certUtil -hashfile dotnet-sdk-3.0.100-preview6-012264-linux-arm64.tar.gz MD5 (or SHA256) to get hashes
+SRC_URI =  "${URL};downloadfilename=dotnet-${PV}-linux-arm64.tar.gz"
+SRC_URI[md5sum] = "cf3321784ee26a42be0d381c5923eb6f"
+SRC_URI[sha256sum] = "5723c8eff1e082edf2ab5d1f93ad4e2790ded111d8b91712827a130064a5d929"
 
 S = "${WORKDIR}"
 

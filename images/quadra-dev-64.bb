@@ -29,7 +29,7 @@ MQTT = " \
 "
 
 QUADRA = " \
-    dotnet-64 \
+    dotnet-sdk-64 \
     brickd \
     quadra \
     wiringpi \

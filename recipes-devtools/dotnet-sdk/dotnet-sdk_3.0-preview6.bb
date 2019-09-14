@@ -1,25 +1,25 @@
 DESCRIPTION = ".NET Core Runtime, SDK & CLI tools"
 HOMEPAGE = "https://www.microsoft.com/net/core"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=42b611e7375c06a28601953626ab16cb"
-PV = "2.1.1"
+LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=9fc642ff452b28d62ab19b7eea50dfb9"
+PV = "3.0-preview6"
 PR = "r0"
 
-RPROVIDES_${PN} = "dotnetcore"
+RPROVIDES_${PN} = "dotnetcore-sdk"
 DEPENDS = "zlib curl"
 RDEPENDS_${PN} = "libunwind icu libcurl openssl libgssapi-krb5"
 
 PACKAGECONFIG_pn-curl = 'zlib ipv6 ssl'
 
-SRC_URI =  "https://download.microsoft.com/download/D/0/4/D04C5489-278D-4C11-9BD3-6128472A7626/dotnet-sdk-2.1.301-linux-arm.tar.gz;downloadfilename=dotnet-${PV}-linux-arm.tar.gz"
-SRC_URI[md5sum] = "af57c4da7976fdb4cbf8bd3b38051700"     
-SRC_URI[sha256sum] = "5ab8b55dc930f4678ecb91d2d9117adf93830c9ef4dd2753ca64d61e8e3dc6d9"
+# See https://github.com/dotnet/core/tree/master/release-notes for json formatted download details
+URL = "https://download.visualstudio.microsoft.com/download/pr/50bc5936-b374-490b-9312-f3ca23c0bcfa/d7680c7a396b115d95ac835334777d02/dotnet-sdk-3.0.100-preview6-012264-linux-arm.tar.gz"
+
+# run certUtil -hashfile dotnet-sdk-3.0.100-preview6-012264-linux-arm.tar.gz MD5 (or SHA256) to get hashes
+SRC_URI =  "${URL};downloadfilename=dotnet-${PV}-linux.arm.tar.gz"
+SRC_URI[md5sum] = "70c52cef93ae9295524dd3a868657e77"
+SRC_URI[sha256sum] = "e3223862302a302a082a94fbe64750551e1c39e0b073a63a16951c04cebe242f"
 
 S = "${WORKDIR}"
-
-HOST_FXR = "2.1.1"
-SHARED_FRAMEWORK = "2.1.1"
-SDK = "2.1.1"
 
 PACKAGES = "${PN}"
 
@@ -49,6 +49,9 @@ shell_do_install() {
 
 	# Symlinks
 	ln -s ${D}/opt/dotnet/dotnet ${D}${bindir}/dotnet
+
+    # Configure install directory
+	mkdir -p ${D}/etc/dotnet && printf '/opt/dotnet' > ${D}/etc/dotnet/install_location
 }
 
 FILES_${PN} = "\
@@ -58,6 +61,7 @@ FILES_${PN} = "\
 	/opt/dotnet/host \
   	/opt/dotnet/sdk \
 	/opt/dotnet/shared \
+	/etc/dotnet/install_location \
 "
 
 INSANE_SKIP_${PN} = "already-stripped staticdev ldflags libdir file-rdeps"
