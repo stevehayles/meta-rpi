@@ -1,0 +1,11 @@
+[Unit]
+Description=Quadra test service
+After=brickd.service
+
+[Service]
+Type=notify
+ExecStart=/opt/quadra/quadra
+Restart=on-failure
+
+[Install]
+WantedBy=basic.target

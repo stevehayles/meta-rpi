@@ -8,4 +8,4 @@ Restart=on-failure
 ExecStart=/usr/bin/brickd
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target

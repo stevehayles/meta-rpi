@@ -6,4 +6,4 @@ PathExists=/dev/bus/usb/001
 Unit=brickd.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target

@@ -31,6 +31,7 @@ MQTT = " \
 QUADRA = " \
     dotnet-64 \
     brickd \
+    quadra \
     wiringpi \
     pi-bluetooth \
     nodejs \

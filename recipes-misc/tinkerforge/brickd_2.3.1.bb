@@ -52,11 +52,11 @@ do_install () {
     # The path file looks for the USB device to appear at /dev/bus/usb/001
     install -d ${D}/${systemd_unitdir}/system
 
-    install -m 0644 ${WORKDIR}/brickd.service ${D}/${systemd_unitdir}/system 
     install -m 0644 ${WORKDIR}/brickd.path ${D}/${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/brickd.service ${D}/${systemd_unitdir}/system 
 
-    install -d ${D}/${sysconfdir}/systemd/system/multi-user.target.wants
-    ln -s -r "${D}/${systemd_unitdir}/system/brickd.path" "${D}/${sysconfdir}/systemd/system/multi-user.target.wants/brickd.path"
+    install -d ${D}/${sysconfdir}/systemd/system/basic.target.wants
+    ln -s -r "${D}/${systemd_unitdir}/system/brickd.path" "${D}/${sysconfdir}/systemd/system/basic.target.wants/brickd.path"
 }
 
 FILES_${PN} += "\
@@ -68,5 +68,5 @@ FILES_${PN} += "\
     ${SLEEP_HOOKS} \
     ${systemd_unitdir}/system/brickd.path \
     ${systemd_unitdir}/system/brickd.service \
-    ${sysconfdir}/systemd/system/multi-user.target.wants/brickd.path \
+    ${sysconfdir}/systemd/system/basic.target.wants/brickd.path \
 "
