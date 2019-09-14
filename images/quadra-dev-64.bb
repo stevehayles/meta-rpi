@@ -144,4 +144,4 @@ ROOTFS_POSTPROCESS_COMMAND += " \
     disable_unused_services ; \
  "
 
-export IMAGE_BASENAME = "quadra-image-64"
+export IMAGE_BASENAME = "quadra-dev-64"
