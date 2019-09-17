@@ -2,7 +2,7 @@ SUMMARY = "A basic development image for the Quadra instrument processor"
 HOMEPAGE = "http://www.fiftyone-north.com"
 LICENSE = "MIT"
 
-IMAGE_FEATURES += "package-management splash"
+IMAGE_FEATURES += "package-management"
 IMAGE_LINGUAS = "en-gb"
 
 inherit image
@@ -10,10 +10,8 @@ inherit image
 DEPENDS += "bcm2835-bootfiles"
 
 CORE_OS = " \
-    ifupdown \
     kernel-modules \
     openssh openssh-keygen openssh-sftp-server \
-    samba \
     packagegroup-core-boot \
     term-prompt \
     tzdata \
@@ -140,7 +138,6 @@ disable_unused_services() {
 
 ROOTFS_POSTPROCESS_COMMAND += " \
     set_local_timezone ; \
-    disable_bootlogd ; \
     disable_unused_services ; \
  "
 
