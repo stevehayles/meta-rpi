@@ -36,16 +36,20 @@ shell_do_install() {
 
 	install -d ${D}/usr/share/dotnet
 	install -d ${D}/usr/share/dotnet/host
+    install -d ${D}/usr/share/dotnet/packs
   	install -d ${D}/usr/share/dotnet/sdk
 	install -d ${D}/usr/share/dotnet/shared
+    install -d ${D}/usr/share/dotnet/templates
 
 	install -m 0755 ${S}/dotnet ${D}/usr/share/dotnet
 	install -m 0644 ${S}/LICENSE.txt ${D}/usr/share/dotnet
 	install -m 0644 ${S}/ThirdPartyNotices.txt ${D}/usr/share/dotnet
 
 	cp -R --no-dereference --preserve=mode,links -v ${S}/host/. ${D}/usr/share/dotnet/host/
+    cp -R --no-dereference --preserve=mode,links -v ${S}/packs/. ${D}/usr/share/dotnet/packs/
   	cp -R --no-dereference --preserve=mode,links -v ${S}/sdk/. ${D}/usr/share/dotnet/sdk/
 	cp -R --no-dereference --preserve=mode,links -v ${S}/shared/. ${D}/usr/share/dotnet/shared/
+    cp -R --no-dereference --preserve=mode,links -v ${S}/templates/. ${D}/usr/share/dotnet/templates/
 
 	# Symlinks
 	ln -s ${D}/usr/share/dotnet/dotnet ${D}${bindir}/dotnet
@@ -59,8 +63,10 @@ FILES_${PN} = "\
 	/usr/share/dotnet/dotnet \
 	/usr/share/dotnet/*.txt \
 	/usr/share/dotnet/host \
+    /usr/share/dotnet/packs \
   	/usr/share/dotnet/sdk \
 	/usr/share/dotnet/shared \
+    /usr/share/dotnet/templates \
 	/etc/dotnet/install_location \
 "
 
