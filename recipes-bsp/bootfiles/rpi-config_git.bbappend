@@ -27,4 +27,9 @@ do_deploy_append() {
         echo "" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
         echo "dtoverlay=pi3-disable-bt" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
     fi
+
+    if [ -n "${BAUDRATE_UART}" ]; then
+        echo "" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+        echo "init_uart_baud=${BAUDRATE_UART}" >> ${DEPLOYDIR}/bcm2835-bootfiles/config.txt
+    fi
 }

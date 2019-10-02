@@ -29,6 +29,9 @@ case "${MACHINE}" in
               bcm2710-rpi-cm3.dtb \
               bcm2837-rpi-3-b.dtb"
         ;;
+    raspberrypi4)
+        DTBS="bcm2711-rpi-4-b.dtb"
+        ;;
     *)
         echo "Invalid MACHINE: ${MACHINE}"
         exit 1
