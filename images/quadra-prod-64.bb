@@ -92,7 +92,7 @@ IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${QUADRA} \
     ${WIFI_SUPPORT} \
-    ${EXTRA_TOOLS_INSTALL_MINIMAL} \
+    ${EXTRA_TOOLS_INSTALL} \
     ${RPI_STUFF} \
 "
 
