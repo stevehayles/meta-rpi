@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DSTDIR=~/rpi/upload
-IMG=quadra-image-64
+IMG=quadra-dev-64
 IMG_LONG="${IMG}-${MACHINE}"
 
 if [ ! -d ${DSTDIR} ]; then
@@ -159,10 +159,10 @@ else
   
   if [[ -z "${COMPRESS}" ]]; then
     LOCAL="${HOME}/rpi/upload/${IMG_LONG}-${CARDSIZE}gb.img"
-    REMOTE="/51 North/Projects/Quadra/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img"
+    REMOTE="/51 North/Projects/Blackfin/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img"
   else
     LOCAL="${HOME}/rpi/upload/${IMG_LONG}-${CARDSIZE}gb.img.xz"
-    REMOTE="/51 North/Projects/Quadra/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
+    REMOTE="/51 North/Projects/Blackfin/${IMG_LONG}-${CARDSIZE}gb_$(date +"%FT%H%M").img.xz"
   fi
 
   echo -e "File name: ${LOCAL}\nRemote File name: ${REMOTE}\n"
