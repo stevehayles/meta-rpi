@@ -14,9 +14,9 @@ This layer depends on:
 
 Latest commits
 
-    poky 411624f
-    meta-openembedded 3bdbf72
-    meta-qt5 dc2dede
-    meta-raspberrypi 0750d5d
+    poky 023ff85
+    meta-openembedded a24acf9
+    meta-qt5 1718712
+    meta-raspberrypi 2f0fa9a
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>
