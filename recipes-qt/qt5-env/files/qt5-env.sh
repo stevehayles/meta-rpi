@@ -1,7 +1,5 @@
 #!/bin/sh
 
-export PATH=${PATH}:/usr/bin/qt5
-
 # the other option is linuxfb if just using qt widgets
 export QT_QPA_PLATFORM=eglfs
 
@@ -32,5 +30,6 @@ if [ -z "${XDG_RUNTIME_DIR}" ]; then
 
     if [ ! -d ${XDG_RUNTIME_DIR} ]; then
         mkdir -p ${XDG_RUNTIME_DIR}
+	chmod -R 7700 ${XDG_RUNTIME_DIR}
     fi
 fi

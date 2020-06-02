@@ -1,22 +1,30 @@
 This layer depends on:
 
     URI: git://git.yoctoproject.org/poky.git
-    branch: warrior
+    branch: dunfell
 
     URI: git://git.openembedded.org/meta-openembedded
-    branch: warrior
+    branch: dunfell
 
     URI: https://github.com/meta-qt5/meta-qt5
-    branch: warrior
+    branch: dunfell
 
     URI: git://git.yoctoproject.org/meta-raspberrypi
-    branch: warrior
+    branch: dunfell
+
+    URI: git://git.yoctoproject.org/meta-security.git
+    branch: dunfell
+
+    URI: https://github.com/jumpnow/meta-jumpnow.git
+    branch: dunfell
 
 Latest commits
 
-    poky 023ff85
-    meta-openembedded a24acf9
-    meta-qt5 1718712
-    meta-raspberrypi 2f0fa9a
+    poky 9c80490684
+    meta-openembedded e413c1ef6
+    meta-qt5 fdd1951
+    meta-raspberrypi 8066fac
+    meta-security d83f7cb
+    meta-jumpnow 03cf591
 
 meta-rpi layer maintainer: Scott Ellis <scott@jumpnowtek.com>

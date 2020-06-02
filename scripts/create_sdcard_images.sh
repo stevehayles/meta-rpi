@@ -4,6 +4,28 @@ DSTDIR=~/rpi/upload
 IMG=quadra-image-64
 IMG_LONG="${IMG}-${MACHINE}"
 
+if [ ! -d ${DSTDIR} ]; then
+    mkdir ${DSTDIR}
+
+    if [ $? -ne 0 ]; then
+        echo "Failed to create $DSTDIR"
+        exit 1
+    fi
+fi
+
+if [ -z "${IMG}" ]; then
+    IMG=console
+fi
+
+if [ -z "${MACHINE}" ]; then
+    if [ -f ../../build/conf/local.conf ]; then
+        export MACHINE=$(grep '^MACHINE =' ../../build/conf/local.conf | cut -d'=' -f2 | tr -d '"' | tr -d ' ')
+        echo "Using MACHINE from local.conf: $MACHINE"
+    fi
+fi
+
+IMG_LONG="${IMG}-${MACHINE}"
+
 if [ ! -d /media/card ]; then
         echo "Temporary mount point [/media/card] not found"
         exit 1
@@ -22,6 +44,19 @@ else
 		echo "Unsupported card size: ${1}"
 		exit 1
 	fi
+fi
+
+if [ -z "$OETMP" ]; then
+    # echo try to find it
+    if [ -f ../../build/conf/local.conf ]; then
+        OETMP=$(grep '^TMPDIR' ../../build/conf/local.conf | awk '{ print $3 }' | sed 's/"//g')
+    fi
+
+    if [ -z "$OETMP" ]; then
+        if [ -d "../../build/tmp" ]; then
+            OETMP="../../build/tmp"
+        fi
+    fi
 fi
 
 if [ -z "${OETMP}" ]; then

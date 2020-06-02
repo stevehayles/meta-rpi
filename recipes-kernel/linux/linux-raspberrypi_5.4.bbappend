@@ -1,18 +1,16 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "4.19.122"
+LINUX_VERSION = "5.4.42"
 
-SRCREV = "2d6b57a6d622c4565be72be0328120baadac8be5"
+SRCREV = "a180c1cd0eafa0e2371e05cd3fb18e83f802c1ec"
 
-SRC_URI += "file://ikconfig.cfg"
+SRC_URI = "\
+    git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
+    file://ikconfig.cfg \
+"
 
 KERNEL_DEVICETREE = " \
     ${RPI_KERNEL_DEVICETREE} \
-    ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
-"
-
-KERNEL_DEVICETREE_raspberrypi3-64 = " \
-    ${RPI_KERNEL_DEVICETREE_64} \
     ${RPI_KERNEL_DEVICETREE_OVERLAYS} \
 "
 
@@ -27,12 +25,6 @@ RPI_KERNEL_DEVICETREE = " \
     bcm2710-rpi-3-b.dtb \
     bcm2710-rpi-cm3.dtb \
     bcm2711-rpi-4-b.dtb \
-"
-
-RPI_KERNEL_DEVICETREE_64 = " \
-    broadcom/bcm2710-rpi-3-b.dtb \
-    broadcom/bcm2710-rpi-3-b-plus.dtb \
-    broadcom/bcm2837-rpi-3-b.dtb \
 "
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
@@ -61,7 +53,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/audiosense-pi.dtbo \
     overlays/audremap.dtbo \
     overlays/balena-fin.dtbo \
-    overlays/bmp085_i2c-sensor.dtbo \
+    overlays/cma.dtbo \
     overlays/dht11.dtbo \
     overlays/dionaudio-loco.dtbo \
     overlays/dionaudio-loco-v2.dtbo \
@@ -97,12 +89,11 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/hifiberry-dacplus.dtbo \
     overlays/hifiberry-digi.dtbo \
     overlays/hifiberry-digi-pro.dtbo \
+    overlays/highperi.dtbo \
     overlays/hy28a.dtbo \
     overlays/hy28b-2017.dtbo \
     overlays/hy28b.dtbo \
-    overlays/i2c0-bcm2708.dtbo \
     overlays/i2c0.dtbo \
-    overlays/i2c1-bcm2708.dtbo \
     overlays/i2c1.dtbo \
     overlays/i2c3.dtbo \
     overlays/i2c4.dtbo \
@@ -148,10 +139,6 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mz61581.dtbo \
     overlays/ov5647.dtbo \
     overlays/papirus.dtbo \
-    overlays/pi3-act-led.dtbo \
-    overlays/pi3-disable-bt.dtbo \
-    overlays/pi3-disable-wifi.dtbo \
-    overlays/pi3-miniuart-bt.dtbo \
     overlays/pibell.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
@@ -176,6 +163,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-proto.dtbo \
     overlays/rpi-sense.dtbo \
     overlays/rpi-tv.dtbo \
+    overlays/rpivid-v4l2.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
     overlays/sc16is750-i2c.dtbo \
     overlays/sc16is752-i2c.dtbo \
@@ -223,9 +211,11 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/uart5.dtbo \
     overlays/udrc.dtbo \
     overlays/upstream.dtbo \
+    overlays/upstream-pi4.dtbo \
     overlays/vc4-fkms-v3d.dtbo \
     overlays/vc4-kms-kippah-7inch.dtbo \
     overlays/vc4-kms-v3d.dtbo \
+    overlays/vc4-kms-v3d-pi4.dtbo \
     overlays/vga666.dtbo \
     overlays/w1-gpio.dtbo \
     overlays/w1-gpio-pullup.dtbo \
