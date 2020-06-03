@@ -23,14 +23,13 @@ MQTT = " \
     mosquitto \
     mosquitto-dev \
     mosquitto-clients \
-    python-paho-mqtt \
+    python3-paho-mqtt \
 "
 
 QUADRA = " \
     dotnet-sdk-64 \
     brickd \
     quadra \
-    wiringpi \
     pi-bluetooth \
     nodejs \
     docker-ce \
@@ -39,7 +38,8 @@ QUADRA = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-raspbian \
+    linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-rpidistro-bcm43455 \
     wpa-supplicant \
 "
 

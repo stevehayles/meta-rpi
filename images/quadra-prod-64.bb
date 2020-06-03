@@ -22,7 +22,7 @@ MQTT = " \
     mosquitto \
     mosquitto-dev \
     mosquitto-clients \
-    python-paho-mqtt \
+    python3-paho-mqtt \
 "
 
 QUADRA = " \
@@ -36,7 +36,8 @@ QUADRA = " \
 WIFI_SUPPORT = " \
     crda \
     iw \
-    linux-firmware-raspbian \
+    linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-rpidistro-bcm43455 \
     wpa-supplicant \
 "
 
