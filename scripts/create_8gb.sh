@@ -12,4 +12,4 @@ export COMPRESS=1
 echo -e "\n***** Enabling Dropbox Upload *****"
 export DROPBOX=1
 
-sudo -E ./create_sdcard_images.sh 8 
+sudo -E ./create_sdcard_images.sh 8
