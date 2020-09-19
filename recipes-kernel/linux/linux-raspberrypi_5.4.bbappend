@@ -1,8 +1,8 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-LINUX_VERSION = "5.4.51"
+LINUX_VERSION = "5.4.65"
 
-SRCREV = "068c6b23e9ba8ac5d50775f868cfa79e407b64f9"
+SRCREV = "1cbfe9ec6b3c714d1c336792dbaf867bde71d485"
 
 SRC_URI = "\
     git://github.com/raspberrypi/linux.git;branch=${LINUX_RPI_BRANCH} \
@@ -29,6 +29,7 @@ RPI_KERNEL_DEVICETREE = " \
 
 RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/act-led.dtbo \
+    overlays/adafruit18.dtbo \
     overlays/adau1977-adc.dtbo \
     overlays/adau7002-simple.dtbo \
     overlays/ads1015.dtbo \
@@ -109,6 +110,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/i2s-gpio28-31.dtbo \
     overlays/ilitek251x.dtbo \
     overlays/imx219.dtbo \
+    overlays/imx290.dtbo \
+    overlays/imx477.dtbo \
     overlays/iqaudio-codec.dtbo \
     overlays/iqaudio-dac.dtbo \
     overlays/iqaudio-dacplus.dtbo \
@@ -121,6 +124,7 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/justboom-digi.dtbo \
     overlays/ltc294x.dtbo \
     overlays/max98357a.dtbo \
+    overlays/maxtherm.dtbo \
     overlays/mbed-dac.dtbo \
     overlays/mcp23017.dtbo \
     overlays/mcp23s17.dtbo \
@@ -138,8 +142,12 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/mpu6050.dtbo \
     overlays/mz61581.dtbo \
     overlays/ov5647.dtbo \
+    overlays/ov7251.dtbo \
+    overlays/ov9281.dtbo \
     overlays/papirus.dtbo \
+    overlays/pca953x.dtbo \
     overlays/pibell.dtbo \
+    overlays/pifacedigital.dtbo \
     overlays/piglow.dtbo \
     overlays/piscreen2r.dtbo \
     overlays/piscreen.dtbo \
@@ -165,8 +173,10 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/rpi-tv.dtbo \
     overlays/rpivid-v4l2.dtbo \
     overlays/rra-digidac1-wm8741-audio.dtbo \
+    overlays/sainsmart18.dtbo \
     overlays/sc16is750-i2c.dtbo \
     overlays/sc16is752-i2c.dtbo \
+    overlays/sc16is752-spi0.dtbo \
     overlays/sc16is752-spi1.dtbo \
     overlays/sdhost.dtbo \
     overlays/sdio.dtbo \
@@ -175,8 +185,8 @@ RPI_KERNEL_DEVICETREE_OVERLAYS = " \
     overlays/smi-dev.dtbo \
     overlays/smi-nand.dtbo \
     overlays/smi.dtbo \
-    overlays/spi0-cs.dtbo \
-    overlays/spi0-hw-cs.dtbo \
+    overlays/spi0-1cs.dtbo \
+    overlays/spi0-2cs.dtbo \
     overlays/spi1-1cs.dtbo \
     overlays/spi1-2cs.dtbo \
     overlays/spi1-3cs.dtbo \
